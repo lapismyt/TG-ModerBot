@@ -89,7 +89,7 @@ def unmute_user(message):
 def del_msg(message):
     if not is_admin(message): return None
     bot.delete_message(message.chat.id, message.reply_to_message.message_id)
-    bot.delete_message(message.chat.id, message..message_id)
+    bot.delete_message(message.chat.id, message.message_id)
 
 # Парсинг длительности времени
 def parse_duration(duration_string):
