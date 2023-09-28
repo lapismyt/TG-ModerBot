@@ -105,7 +105,7 @@ def is_admin(message):
     if message.chat.type == 'private':
         # в личных сообщениях нет админов
         return False
-    elif hasattr(message, "sender_chat"):
+    elif message.sender_chat != None:
         # для каналов проверяем ID канала
         return str(message.sender_chat.id) in admins
     else:
