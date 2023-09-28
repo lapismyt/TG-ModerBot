@@ -84,6 +84,11 @@ def unmute_user(message):
     else:
         bot.reply_to(message, "Ответьте на сообщение пользователя, которого хотите размьютить.")
 
+@bot.message_handler(commands=["del"])
+def del_msg(message):
+    if not is_admin(message): return None
+    bot.delete_message(message.chat.id, message.reply_to_message.message_id)
+
 # Парсинг длительности времени
 def parse_duration(duration_string):
     duration = None
